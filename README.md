@@ -20,4 +20,3 @@ graph TD
     E --> F[Segmentation with Point-SAM]
     F --> G[NMS (IoU-based)]
     G --> H[Final instance masks]
-```
