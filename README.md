@@ -9,15 +9,13 @@ The goal is to extract object-level masks without any manual prompts.
 - Eliminate the need for manual clicks or annotations
 - Enable object-level segmentation for downstream 3D scene understanding
 
-## 🧭 Pipeline Overview
+## 🧭 Installation
 
-## 🧭 Pipeline Overview
+1. conda 환경 생성 및 활성화
 
-graph TD
-    A[Input .ply point cloud] --> B[Preprocessing]
-    B --> C[Plane removal - RANSAC]
-    C --> D[Clustering - DBSCAN/HDBSCAN]
-    D --> E[Prompt sampling - FPS per cluster]
-    E --> F[Segmentation - Point-SAM]
-    F --> G[NMS - IoU based]
-    G --> H[Final instance masks]
+```bash
+
+conda create -n point-sam python=3.10 -y
+conda activate point-sam
+```
+⚠️ Python ≥3.8만 요구하지만, PyTorch 2.1+의 안정성과 호환성을 위해 3.10 추천
