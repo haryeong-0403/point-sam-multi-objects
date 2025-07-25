@@ -11,12 +11,14 @@ The goal is to extract object-level masks without any manual prompts.
 
 ## 🧭 Pipeline Overview
 
+## 🧭 Pipeline Overview
+
 ```mermaid
 graph TD
     A[Input .ply point cloud] --> B[Preprocessing]
     B --> C[Plane removal (RANSAC)]
     C --> D[Clustering (Euclidean DBSCAN/HDBSCAN)]
-    D --> E[Prompt point sampling (FPS per cluster)]
+    D --> E[Prompt sampling (FPS per cluster)]
     E --> F[Segmentation with Point-SAM]
     F --> G[NMS (IoU-based)]
     G --> H[Final instance masks]
